@@ -23,7 +23,7 @@ import Carousel from '../../components/molecules/Carousel';
 
 const Following = ({navigation}) => {
   return (
-    <View style={styles.container}>
+    <View style={styles.page}>
       <Text>Following</Text>
     </View>
   );
@@ -31,4 +31,8 @@ const Following = ({navigation}) => {
 
 export default Following;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  page: {
+    flex: 1,
+  },
+});

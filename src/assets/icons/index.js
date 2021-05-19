@@ -29,8 +29,27 @@ import IconHelp from './ic-help.svg';
 import IconSearch from './ic-search.svg';
 import IconStar from './ic-star.svg';
 import IconPinSmall from './ic-pin-small.svg';
+import IconArrowBack from './ic-arrow-back.svg';
+import IconShoppingCart from './ic-shopping-cart.svg';
+import IconDropdownArrowDown from './ic-dropdown-arrow-down.svg';
+import IconDropdownArrowRight from './ic-dropdown-arrow-right.svg';
+import IconWallet from './ic-wallet.svg';
+import IconClock from './ic-clock';
+import IconBox from './ic-box.svg';
+import IconCar from './ic-car.svg';
+import IconCompleted from './ic-completed';
+import IconLoveSmall from './ic-love-small.svg';
 
 export {
+  IconLoveSmall,
+  IconClock,
+  IconBox,
+  IconCar,
+  IconCompleted,
+  IconWallet,
+  IconDropdownArrowRight,
+  IconDropdownArrowDown,
+  IconShoppingCart,
   IconProfile,
   IconLock,
   IconMenu,
@@ -62,4 +81,5 @@ export {
   IconSearch,
   IconStar,
   IconPinSmall,
+  IconArrowBack,
 };

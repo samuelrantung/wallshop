@@ -29,6 +29,7 @@ const Login = ({navigation}) => {
           paddingHorizontal={0}
           height={50}
           radius={30}
+          width={339}
           onPress={() => navigation.navigate('Dashboard')}
         />
         <Gap height={10} />

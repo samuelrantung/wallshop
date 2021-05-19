@@ -21,18 +21,16 @@ import {Button, Gap} from '../../components';
 import {FormInput} from '../../components';
 import Carousel from '../../components/molecules/Carousel';
 import TopTab from '../../components/molecules/TopTab';
-import TabNavigator from './TabNavigator';
 
-const Notification = ({navigation}) => {
+const Booking = ({navigation}) => {
   return (
     <View style={styles.page}>
-      <TopTab title="Notifikasi" onBack={() => navigation.goBack()} />
-      <TabNavigator />
+      <Text>Booking</Text>
     </View>
   );
 };
 
-export default Notification;
+export default Booking;
 
 const styles = StyleSheet.create({
   page: {

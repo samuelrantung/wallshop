@@ -1,18 +1,35 @@
 import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  Image,
+  TextInput,
+} from 'react-native';
 import {
   colors,
   fonts,
   IconArrowRight,
   IconCompass,
   IconPin,
+  IconPin2,
+  IconPinSmall,
+  IconStar,
+  IMGAceHardware,
+  IMGDashboard,
+  IMGGramedia,
   IMGHandsanitizer,
   IMGMask,
+  IMGMaskutSport,
   IMGSambalRoa,
   IMGSneakers,
+  IMGSportStation,
   IMGTarantula,
 } from '../../assets';
-import {Carousel, SearchBar, RoundButton} from '../../components';
+import {Carousel, SearchBar, RoundButton, Gap, Button} from '../../components';
+import PopularShop from './PopularShop';
 
 const OpenAllButton = () => {
   return (
@@ -25,11 +42,15 @@ const OpenAllButton = () => {
 
 const Dashboard = ({navigation}) => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.topContainer}>
         <SearchBar type="dashboard" />
         <View style={styles.carouselContainer}>
-          <Carousel />
+          <Carousel
+            image1={IMGDashboard}
+            image2={IMGDashboard}
+            image3={IMGDashboard}
+          />
         </View>
       </View>
 
@@ -84,7 +105,39 @@ const Dashboard = ({navigation}) => {
           <RoundButton type="svg" image="icon-dog" title="Peliharaan" />
         </View>
       </View>
-    </View>
+      <View style={styles.popularShopWrapper}>
+        <Text style={styles.shoppingCategoryTitle}>TOKO TERPOPULER</Text>
+        <Gap height={20} />
+        <PopularShop
+          shopName="Ace Hardware Mantos"
+          shopDescription="Toko perlengkapan rumah"
+          rating="4.9"
+          location="Mantos, Kota Manado"
+          image={IMGAceHardware}
+        />
+        <PopularShop
+          shopName="Gramedia Mantos"
+          shopDescription="Toko buku dan perlengkapan"
+          rating="4.8"
+          location="Mantos, Kota Manado"
+          image={IMGGramedia}
+        />
+        <PopularShop
+          shopName="Sport Station"
+          shopDescription="Toko perlengkapan olahraga"
+          rating="4.9"
+          location="Mantos, Kota Manado"
+          image={IMGSportStation}
+        />
+        <PopularShop
+          shopName="Maskut Sport"
+          shopDescription="Toko perlengkapan olahraga"
+          rating="5.0"
+          location="Manado Trade Center, Kota Manado"
+          image={IMGMaskutSport}
+        />
+      </View>
+    </ScrollView>
   );
 };
 
@@ -123,7 +176,7 @@ const styles = StyleSheet.create({
   },
 
   carouselContainer: {
-    // marginTop: 25,
+    // paddingHorizontal: 20,
     top: 25,
   },
 
@@ -205,5 +258,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     paddingHorizontal: 26,
     paddingVertical: 7,
+  },
+  popularShopWrapper: {
+    paddingHorizontal: 26,
   },
 });

@@ -22,7 +22,7 @@ const Button = ({
     );
   } else {
     return (
-      <View style={styles.buttonContainer(paddingHorizontal, height)}>
+      <View style={styles.buttonContainer(paddingHorizontal, height, width)}>
         <TouchableOpacity
           style={styles.button(color, radius)}
           onPress={onPress}>
@@ -36,8 +36,8 @@ const Button = ({
 export default Button;
 
 const styles = StyleSheet.create({
-  buttonContainer: (paddingHorizontal, height) => ({
-    width: '100%',
+  buttonContainer: (paddingHorizontal, height, width) => ({
+    width: width,
     paddingHorizontal: paddingHorizontal,
     height: height,
   }),

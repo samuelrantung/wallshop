@@ -23,37 +23,25 @@ import {Button, Gap} from '../../components';
 import {FormInput} from '../../components';
 import Carousel from '../../components/molecules/Carousel';
 import TopTab from '../../components/molecules/TopTab';
-import AccountButton from './AccountButton';
 
-const Account = ({navigation}) => {
+const AccountButton = ({
+  title,
+  icon,
+  color = colors.grey,
+  bottomBorder = colors.grey,
+}) => {
   return (
-    <View style={styles.container}>
-      <TopTab title="Akun" type="no-cart" onBack={() => navigation.goBack()} />
-      <View style={styles.profileContainer}>
-        <Image source={IMGProfilePicture} style={styles.profilePicture} />
-        <View>
-          <Text style={styles.name}>Roland Candra</Text>
-          <Text style={styles.email}>rolandcandra@gmail.com</Text>
-        </View>
+    <TouchableOpacity style={styles.accountButtonContainer(bottomBorder)}>
+      <Button type="icon-only" icon={icon} />
+      <Text style={styles.buttonText(color)}>{title}</Text>
+      <View style={styles.rightArrowContainer}>
+        <IconArrowRight color={colors.grey} />
       </View>
-      <View style={styles.contentContainer}>
-        <AccountButton title="Pesanan Saya" icon="icon-order" />
-        <AccountButton title="Favorit Saya" icon="icon-love" />
-        <AccountButton title="Voucher Saya" icon="icon-ticket" />
-        <AccountButton title="Alamat Saya" icon="icon-pin-2" />
-        <AccountButton title="Privasi dan Kebijakan" icon="icon-protection" />
-        <AccountButton title="Bantuan" icon="icon-help" />
-        <AccountButton
-          title="Keluar"
-          color={colors.red}
-          bottomBorder={colors.white}
-        />
-      </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
-export default Account;
+export default AccountButton;
 
 const styles = StyleSheet.create({
   container: {
@@ -98,16 +86,16 @@ const styles = StyleSheet.create({
     color: colors.text.grey,
   },
 
-  accountButtonContainer: {
+  accountButtonContainer: bottomBorder => ({
     flexDirection: 'row',
     marginHorizontal: 31,
     borderBottomWidth: 1,
-    borderBottomColor: colors.grey,
+    borderBottomColor: bottomBorder,
     alignItems: 'center',
     paddingBottom: 9,
     paddingHorizontal: 7,
     marginBottom: 22,
-  },
+  }),
   buttonText: color => ({
     fontSize: 14,
     color: color,

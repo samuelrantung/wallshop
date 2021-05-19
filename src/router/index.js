@@ -8,6 +8,7 @@ import {
   Notification,
   Account,
   Product,
+  Shop,
 } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
@@ -26,6 +27,7 @@ const BottomNavigator = () => {
   return (
     <Tab.Navigator
       tabBarOptions={{
+        keyboardHidesTabBar: true,
         activeTintColor: colors.red,
         labelStyle: {
           fontFamily: fonts.Roboto.bold,
@@ -111,6 +113,11 @@ const Router = () => {
       <Stack.Screen
         name="Product"
         component={Product}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Shop"
+        component={Shop}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

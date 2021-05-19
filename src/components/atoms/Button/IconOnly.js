@@ -23,6 +23,9 @@ import {
   IconSearch,
   IconPin,
   IconPinSmall,
+  IconArrowBack,
+  IconShoppingCart,
+  IconLoveSmall,
 } from '../../../assets';
 import {colors} from '../../../assets';
 
@@ -172,6 +175,27 @@ const IconOnly = ({icon, onPress, width, height, color = colors.white}) => {
       return (
         <View style={styles.iconContainer(width, height)}>
           <IconPinSmall />
+        </View>
+      );
+    }
+    if (icon === 'icon-arrow-back') {
+      return (
+        <View style={styles.iconContainer(width, height)}>
+          <IconArrowBack />
+        </View>
+      );
+    }
+    if (icon === 'icon-shopping-cart') {
+      return (
+        <View style={styles.iconContainer(width, height)}>
+          <IconShoppingCart />
+        </View>
+      );
+    }
+    if (icon === 'icon-love-small') {
+      return (
+        <View style={styles.iconContainer(width, height)}>
+          <IconLoveSmall />
         </View>
       );
     }
