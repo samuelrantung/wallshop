@@ -56,176 +56,189 @@ const OpenAllButton = () => {
 
 const Dashboard = ({navigation}) => {
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.page}>
       <StatusBar backgroundColor={colors.red} />
-      <View style={styles.topContainer}>
+      <View style={styles.searchBar}>
+        <Gap height={5} />
         <SearchBar type="dashboard" />
-        <Gap height={15} />
-        <View style={styles.carouselContainer}>
-          <Carousel
-            image1={IMGDashboard}
-            image2={IMGDashboard}
-            image3={IMGDashboard}
-          />
-        </View>
-      </View>
-      <Gap height={70} />
-      <View style={styles.promoTitleContainer}>
-        <IconPin style={styles.iconPin} />
-        <Text style={styles.titleTertiary}>Promo di Sekitar Anda</Text>
-        <OpenAllButton />
-      </View>
-      <Gap height={5} />
-      <View style={styles.promosContainer}>
-        <RoundButton type="png" image={IMGMask} title="Masker" />
-        <RoundButton
-          type="png"
-          image={IMGHandsanitizer}
-          title="Handsanitizer"
-        />
-        <RoundButton type="png" image={IMGSambalRoa} title="Sambal Roa" />
-        <RoundButton type="png" image={IMGSneakers} title="Sneakers" />
-        <RoundButton type="png" image={IMGTarantula} title="Tarantula" />
+        <Gap height={5} />
       </View>
 
-      <View style={styles.shoppingCategoryContainer}>
-        <Text style={styles.shoppingCategoryTitle}>KATEGORI BELANJA</Text>
-        <TouchableOpacity style={styles.shoppingCategoryButton}>
-          <Image source={IMGLeaderboard} />
-          <Text style={styles.shoppingCategoryButtonText}>Leaderboard</Text>
-        </TouchableOpacity>
-      </View>
-      <Gap height={3} />
-      <View style={styles.categoryContainer}>
-        <View style={styles.lineCategoryContainer}>
+      <ScrollView style={styles.container}>
+        <View style={styles.topContainer}>
+          <Gap height={5} />
+          <View style={styles.carouselContainer}>
+            <Carousel
+              image1={IMGDashboard}
+              image2={IMGDashboard}
+              image3={IMGDashboard}
+            />
+          </View>
+        </View>
+        <Gap height={80} />
+        <View style={styles.promoTitleContainer}>
+          <IconPin style={styles.iconPin} />
+          <Text style={styles.titleTertiary}>Promo di Sekitar Anda</Text>
+          <OpenAllButton />
+        </View>
+        <Gap height={5} />
+        <View style={styles.promosContainer}>
+          <RoundButton type="png" image={IMGMask} title="Masker" />
           <RoundButton
-            type="square"
-            image={IMGFashionPria}
-            title="Fashion Pria"
-            onClick={() => navigation.navigate('Product')}
+            type="png"
+            image={IMGHandsanitizer}
+            title="Handsanitizer"
           />
-          <RoundButton
-            type="square"
-            image={IMGFashionWanita}
-            title="Fashion Wanita"
-            onClick={() => navigation.navigate('Product')}
+          <RoundButton type="png" image={IMGSambalRoa} title="Sambal Roa" />
+          <RoundButton type="png" image={IMGSneakers} title="Sneakers" />
+          <RoundButton type="png" image={IMGTarantula} title="Tarantula" />
+        </View>
+        <Gap height={5} />
+        <View style={styles.shoppingCategoryContainer}>
+          <Text style={styles.shoppingCategoryTitle}>KATEGORI BELANJA</Text>
+          <TouchableOpacity style={styles.shoppingCategoryButton}>
+            <Image source={IMGLeaderboard} />
+            <Text style={styles.shoppingCategoryButtonText}>Leaderboard</Text>
+          </TouchableOpacity>
+        </View>
+        <Gap height={3} />
+        <View style={styles.categoryContainer}>
+          <View style={styles.lineCategoryContainer}>
+            <RoundButton
+              type="square"
+              image={IMGFashionPria}
+              title="Fashion Pria"
+              onClick={() => navigation.navigate('Product')}
+            />
+            <RoundButton
+              type="square"
+              image={IMGFashionWanita}
+              title="Fashion Wanita"
+              onClick={() => navigation.navigate('Product')}
+            />
+            <RoundButton
+              type="square"
+              image={IMGSouvenir}
+              title="Souvenir"
+              onClick={() => navigation.navigate('Product')}
+            />
+            <RoundButton
+              type="square"
+              image={IMGOlahraga}
+              title="Olahraga "
+              onClick={() => navigation.navigate('Product')}
+            />
+          </View>
+          <View style={styles.lineCategoryContainer}>
+            <RoundButton
+              type="square"
+              image={IMGMakanan}
+              title="Makanan"
+              onClick={() => navigation.navigate('Product')}
+            />
+            <RoundButton
+              type="square"
+              image={IMGGadget}
+              title="Gadget"
+              onClick={() => navigation.navigate('Product')}
+            />
+            <RoundButton
+              type="square"
+              image={IMGOtomotif}
+              title="Otomotif"
+              onClick={() => navigation.navigate('Product')}
+            />
+            <RoundButton
+              type="square"
+              image={IMGBuku}
+              title="Buku"
+              onClick={() => navigation.navigate('Product')}
+            />
+          </View>
+          <View style={styles.lineCategoryContainer}>
+            <RoundButton
+              type="square"
+              image={IMGKesehatan}
+              title="Kesehatan"
+              onClick={() => navigation.navigate('Product')}
+            />
+            <RoundButton
+              type="square"
+              image={IMGFurniture}
+              title="Furniture"
+              onClick={() => navigation.navigate('Product')}
+            />
+            <RoundButton
+              type="square"
+              image={IMGMainan}
+              title="Mainan"
+              onClick={() => navigation.navigate('Product')}
+            />
+            <RoundButton
+              type="square"
+              image={IMGPeliharaan}
+              title="Peliharaan"
+              onClick={() => navigation.navigate('Product')}
+            />
+          </View>
+        </View>
+        <Gap height={25} />
+        <View style={styles.popularShopWrapper}>
+          <Text style={styles.shoppingCategoryTitle}>TOKO TERPOPULER</Text>
+          <Gap height={20} />
+          <PopularShop
+            shopName="Ace Hardware Mantos"
+            shopDescription="Toko perlengkapan rumah"
+            rating="4.9"
+            location="Mantos, Kota Manado"
+            image={IMGAceHardware}
           />
-          <RoundButton
-            type="square"
-            image={IMGSouvenir}
-            title="Souvenir"
-            onClick={() => navigation.navigate('Product')}
+          <PopularShop
+            shopName="Gramedia Mantos"
+            shopDescription="Toko buku dan perlengkapan"
+            rating="4.8"
+            location="Mantos, Kota Manado"
+            image={IMGGramedia}
           />
-          <RoundButton
-            type="square"
-            image={IMGOlahraga}
-            title="Olahraga "
-            onClick={() => navigation.navigate('Product')}
+          <PopularShop
+            shopName="Sport Station"
+            shopDescription="Toko perlengkapan olahraga"
+            rating="4.9"
+            location="Mantos, Kota Manado"
+            image={IMGSportStation}
+          />
+          <PopularShop
+            shopName="Maskut Sport"
+            shopDescription="Toko perlengkapan olahraga"
+            rating="5.0"
+            location="Manado Trade Center, Kota Manado"
+            image={IMGMaskutSport}
           />
         </View>
-        <View style={styles.lineCategoryContainer}>
-          <RoundButton
-            type="square"
-            image={IMGMakanan}
-            title="Makanan"
-            onClick={() => navigation.navigate('Product')}
-          />
-          <RoundButton
-            type="square"
-            image={IMGGadget}
-            title="Gadget"
-            onClick={() => navigation.navigate('Product')}
-          />
-          <RoundButton
-            type="square"
-            image={IMGOtomotif}
-            title="Otomotif"
-            onClick={() => navigation.navigate('Product')}
-          />
-          <RoundButton
-            type="square"
-            image={IMGBuku}
-            title="Buku"
-            onClick={() => navigation.navigate('Product')}
-          />
-        </View>
-        <View style={styles.lineCategoryContainer}>
-          <RoundButton
-            type="square"
-            image={IMGKesehatan}
-            title="Kesehatan"
-            onClick={() => navigation.navigate('Product')}
-          />
-          <RoundButton
-            type="square"
-            image={IMGFurniture}
-            title="Furniture"
-            onClick={() => navigation.navigate('Product')}
-          />
-          <RoundButton
-            type="square"
-            image={IMGMainan}
-            title="Mainan"
-            onClick={() => navigation.navigate('Product')}
-          />
-          <RoundButton
-            type="square"
-            image={IMGPeliharaan}
-            title="Peliharaan"
-            onClick={() => navigation.navigate('Product')}
-          />
-        </View>
-      </View>
-      <Gap height={25} />
-      <View style={styles.popularShopWrapper}>
-        <Text style={styles.shoppingCategoryTitle}>TOKO TERPOPULER</Text>
-        <Gap height={20} />
-        <PopularShop
-          shopName="Ace Hardware Mantos"
-          shopDescription="Toko perlengkapan rumah"
-          rating="4.9"
-          location="Mantos, Kota Manado"
-          image={IMGAceHardware}
-        />
-        <PopularShop
-          shopName="Gramedia Mantos"
-          shopDescription="Toko buku dan perlengkapan"
-          rating="4.8"
-          location="Mantos, Kota Manado"
-          image={IMGGramedia}
-        />
-        <PopularShop
-          shopName="Sport Station"
-          shopDescription="Toko perlengkapan olahraga"
-          rating="4.9"
-          location="Mantos, Kota Manado"
-          image={IMGSportStation}
-        />
-        <PopularShop
-          shopName="Maskut Sport"
-          shopDescription="Toko perlengkapan olahraga"
-          rating="5.0"
-          location="Manado Trade Center, Kota Manado"
-          image={IMGMaskutSport}
-        />
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 };
 
 export default Dashboard;
 
 const styles = StyleSheet.create({
+  page: {
+    flex: 1,
+  },
+  searchBar: {
+    backgroundColor: colors.red,
+    alignItems: 'center',
+  },
   container: {
     flex: 1,
     backgroundColor: colors.white,
   },
   topContainer: {
-    height: 187,
+    height: 100,
     backgroundColor: colors.red,
     width: '100%',
     alignItems: 'center',
-    paddingTop: 15,
   },
   searchContainer: {
     flexDirection: 'row',
@@ -248,7 +261,7 @@ const styles = StyleSheet.create({
   },
 
   carouselContainer: {
-    // top: 25,
+    height: 175,
   },
 
   promoTitleContainer: {
@@ -293,7 +306,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 26,
-    marginTop: 15,
   },
   shoppingCategoryTitle: {
     fontFamily: fonts.Roboto.bold,
@@ -326,7 +338,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     paddingHorizontal: 26,
-    paddingVertical: 7,
+    paddingVertical: 5,
   },
   popularShopWrapper: {
     paddingHorizontal: 26,

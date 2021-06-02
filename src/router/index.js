@@ -37,8 +37,8 @@ const BottomNavigator = () => {
           paddingTop: 5,
         },
         style: {
-          height: 60,
-          paddingBottom: 5,
+          height: 50,
+          paddingBottom: 2,
           borderTopWidth: 1,
           borderTopColor: colors.grey,
         },

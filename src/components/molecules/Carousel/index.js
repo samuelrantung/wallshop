@@ -7,6 +7,7 @@ const Carousel = ({image1, image2, image3}) => {
   return (
     <Swiper
       style={styles.carouselWrapper}
+      autoplay={true}
       dotStyle={{
         backgroundColor: colors.green,
         opacity: 0.5,
