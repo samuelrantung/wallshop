@@ -175,6 +175,7 @@ const Lokal = ({navigation}) => {
           />
         </View>
       </View>
+      <Gap height={20} />
     </ScrollView>
   );
 };

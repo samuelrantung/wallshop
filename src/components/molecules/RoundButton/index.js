@@ -6,10 +6,18 @@ import {Button} from '../../../components';
 const RoundButton = ({title, image, type, onClick}) => {
   if (type === 'png') {
     return (
-      <TouchableOpacity style={styles.roundButton}>
+      <TouchableOpacity style={styles.roundButton} onPress={onClick}>
         <View style={styles.roundButtonImage}>
-          <Image source={image} />
+          <Image source={image} style={styles.image} />
         </View>
+        <Text style={styles.roundButtonTitle}>{title}</Text>
+      </TouchableOpacity>
+    );
+  }
+  if (type === 'square') {
+    return (
+      <TouchableOpacity style={styles.roundButton} onPress={onClick}>
+        <Image source={image} style={styles.image} />
         <Text style={styles.roundButtonTitle}>{title}</Text>
       </TouchableOpacity>
     );
@@ -36,7 +44,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   roundButtonImage: {
-    borderRadius: 25,
+    borderRadius: 50,
     elevation: 3,
+  },
+  image: {
+    width: 67,
+    height: 67,
   },
 });

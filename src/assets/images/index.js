@@ -17,8 +17,34 @@ import IMGSportStation from './img-sport-station.png';
 import IMGMaskutSport from './img-maskut-sport.png';
 import IMG3Second from './img-3second.png';
 import IMGMiensSouvenirTikala from './img-miens-souvenir-tikala.png';
+import IMGLeaderboard from './img-leaderboard.png';
+import IMGFashionPria from './img-fashion-pria.png';
+import IMGSouvenir from './img-souvenir.png';
+import IMGOlahraga from './img-olahraga.png';
+import IMGFashionWanita from './img-fashion-wanita.png';
+import IMGMakanan from './img-makanan.png';
+import IMGGadget from './img-gadget.png';
+import IMGOtomotif from './img-otomotif.png';
+import IMGBuku from './img-buku.png';
+import IMGKesehatan from './img-kesehatan.png';
+import IMGFurniture from './img-furniture.png';
+import IMGMainan from './img-mainan.png';
+import IMGPeliharaan from './img-peliharaan.png';
 
 export {
+  IMGMakanan,
+  IMGGadget,
+  IMGOtomotif,
+  IMGBuku,
+  IMGKesehatan,
+  IMGFurniture,
+  IMGMainan,
+  IMGPeliharaan,
+  IMGFashionWanita,
+  IMGSouvenir,
+  IMGOlahraga,
+  IMGFashionPria,
+  IMGLeaderboard,
   IMG3Second,
   IMGMiensSouvenirTikala,
   IMGGramedia,

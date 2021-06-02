@@ -1,8 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import Button from '../../atoms/Button';
-import {fonts, colors} from '../../../assets';
-import {Gap} from '../../atoms';
+import {fonts} from '../../../assets';
 
 const TopTab = ({title, onBack, type}) => {
   if (type === 'no-cart') {
@@ -18,7 +17,7 @@ const TopTab = ({title, onBack, type}) => {
     return (
       <View style={styles.topTab}>
         <View style={styles.titleContainer}>
-          <Button type="icon-only" icon="icon-arrow-back" />
+          <Button type="icon-only" icon="icon-arrow-back" onPress={onBack} />
           <Text style={styles.title}>{title}</Text>
         </View>
         <Button type="icon-only" icon="icon-shopping-cart" />

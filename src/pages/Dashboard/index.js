@@ -5,9 +5,10 @@ import {
   Text,
   TouchableOpacity,
   ScrollView,
+  StatusBar,
   Image,
-  TextInput,
 } from 'react-native';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {
   colors,
   fonts,
@@ -18,13 +19,26 @@ import {
   IconPinSmall,
   IconStar,
   IMGAceHardware,
+  IMGBuku,
   IMGDashboard,
+  IMGFashionPria,
+  IMGFashionWanita,
+  IMGFurniture,
+  IMGGadget,
   IMGGramedia,
   IMGHandsanitizer,
+  IMGKesehatan,
+  IMGLeaderboard,
+  IMGMainan,
+  IMGMakanan,
   IMGMask,
   IMGMaskutSport,
+  IMGOlahraga,
+  IMGOtomotif,
+  IMGPeliharaan,
   IMGSambalRoa,
   IMGSneakers,
+  IMGSouvenir,
   IMGSportStation,
   IMGTarantula,
 } from '../../assets';
@@ -43,8 +57,10 @@ const OpenAllButton = () => {
 const Dashboard = ({navigation}) => {
   return (
     <ScrollView style={styles.container}>
+      <StatusBar backgroundColor={colors.red} />
       <View style={styles.topContainer}>
         <SearchBar type="dashboard" />
+        <Gap height={15} />
         <View style={styles.carouselContainer}>
           <Carousel
             image1={IMGDashboard}
@@ -53,13 +69,13 @@ const Dashboard = ({navigation}) => {
           />
         </View>
       </View>
-
+      <Gap height={70} />
       <View style={styles.promoTitleContainer}>
         <IconPin style={styles.iconPin} />
         <Text style={styles.titleTertiary}>Promo di Sekitar Anda</Text>
         <OpenAllButton />
       </View>
-
+      <Gap height={5} />
       <View style={styles.promosContainer}>
         <RoundButton type="png" image={IMGMask} title="Masker" />
         <RoundButton
@@ -75,36 +91,92 @@ const Dashboard = ({navigation}) => {
       <View style={styles.shoppingCategoryContainer}>
         <Text style={styles.shoppingCategoryTitle}>KATEGORI BELANJA</Text>
         <TouchableOpacity style={styles.shoppingCategoryButton}>
-          <IconCompass />
-          <Text style={styles.shoppingCategoryButtonText}>
-            Eksplorasi sekitar
-          </Text>
+          <Image source={IMGLeaderboard} />
+          <Text style={styles.shoppingCategoryButtonText}>Leaderboard</Text>
         </TouchableOpacity>
       </View>
-
-      <View style={styles.openAllButtonContainer}>
-        <OpenAllButton style={styles.openAllButton} />
-      </View>
-
+      <Gap height={3} />
       <View style={styles.categoryContainer}>
         <View style={styles.lineCategoryContainer}>
           <RoundButton
-            type="svg"
-            image="icon-electronic"
-            title="Elektronik"
+            type="square"
+            image={IMGFashionPria}
+            title="Fashion Pria"
             onClick={() => navigation.navigate('Product')}
           />
-          <RoundButton type="svg" image="icon-furniture" title="Furnitur" />
-          <RoundButton type="svg" image="icon-house" title="Bangunan" />
-          <RoundButton type="svg" image="icon-ball" title="Olahraga" />
+          <RoundButton
+            type="square"
+            image={IMGFashionWanita}
+            title="Fashion Wanita"
+            onClick={() => navigation.navigate('Product')}
+          />
+          <RoundButton
+            type="square"
+            image={IMGSouvenir}
+            title="Souvenir"
+            onClick={() => navigation.navigate('Product')}
+          />
+          <RoundButton
+            type="square"
+            image={IMGOlahraga}
+            title="Olahraga "
+            onClick={() => navigation.navigate('Product')}
+          />
         </View>
         <View style={styles.lineCategoryContainer}>
-          <RoundButton type="svg" image="icon-medicine" title="Kesehatan" />
-          <RoundButton type="svg" image="icon-chef-hat" title="Dapur" />
-          <RoundButton type="svg" image="icon-fruits" title="Bahan Pangan" />
-          <RoundButton type="svg" image="icon-dog" title="Peliharaan" />
+          <RoundButton
+            type="square"
+            image={IMGMakanan}
+            title="Makanan"
+            onClick={() => navigation.navigate('Product')}
+          />
+          <RoundButton
+            type="square"
+            image={IMGGadget}
+            title="Gadget"
+            onClick={() => navigation.navigate('Product')}
+          />
+          <RoundButton
+            type="square"
+            image={IMGOtomotif}
+            title="Otomotif"
+            onClick={() => navigation.navigate('Product')}
+          />
+          <RoundButton
+            type="square"
+            image={IMGBuku}
+            title="Buku"
+            onClick={() => navigation.navigate('Product')}
+          />
+        </View>
+        <View style={styles.lineCategoryContainer}>
+          <RoundButton
+            type="square"
+            image={IMGKesehatan}
+            title="Kesehatan"
+            onClick={() => navigation.navigate('Product')}
+          />
+          <RoundButton
+            type="square"
+            image={IMGFurniture}
+            title="Furniture"
+            onClick={() => navigation.navigate('Product')}
+          />
+          <RoundButton
+            type="square"
+            image={IMGMainan}
+            title="Mainan"
+            onClick={() => navigation.navigate('Product')}
+          />
+          <RoundButton
+            type="square"
+            image={IMGPeliharaan}
+            title="Peliharaan"
+            onClick={() => navigation.navigate('Product')}
+          />
         </View>
       </View>
+      <Gap height={25} />
       <View style={styles.popularShopWrapper}>
         <Text style={styles.shoppingCategoryTitle}>TOKO TERPOPULER</Text>
         <Gap height={20} />
@@ -153,7 +225,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.red,
     width: '100%',
     alignItems: 'center',
-    paddingTop: 25,
+    paddingTop: 15,
   },
   searchContainer: {
     flexDirection: 'row',
@@ -176,13 +248,11 @@ const styles = StyleSheet.create({
   },
 
   carouselContainer: {
-    // paddingHorizontal: 20,
-    top: 25,
+    // top: 25,
   },
 
   promoTitleContainer: {
     flexDirection: 'row',
-    marginTop: 100,
     justifyContent: 'space-between',
     paddingHorizontal: 26,
   },
@@ -217,7 +287,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 26,
-    marginTop: 15,
   },
 
   shoppingCategoryContainer: {
@@ -233,7 +302,7 @@ const styles = StyleSheet.create({
   shoppingCategoryButton: {
     backgroundColor: colors.green,
     flexDirection: 'row',
-    paddingHorizontal: 17,
+    paddingHorizontal: 25,
     paddingVertical: 7,
     borderRadius: 20,
     justifyContent: 'center',

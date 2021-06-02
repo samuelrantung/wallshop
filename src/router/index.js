@@ -111,6 +111,11 @@ const Router = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
+        name="DashboardPage"
+        component={Dashboard}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
         name="Product"
         component={Product}
         options={{headerShown: false}}
@@ -118,6 +123,16 @@ const Router = () => {
       <Stack.Screen
         name="Shop"
         component={Shop}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Explore"
+        component={Explore}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Notification"
+        component={Notification}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

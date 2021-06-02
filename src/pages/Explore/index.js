@@ -10,14 +10,14 @@ import {
 } from 'react-native';
 import Swiper from 'react-native-swiper';
 import {colors, fonts, IMGExplore1, IMGExplore2} from '../../assets';
-import {Carousel} from '../../components';
+import {Carousel, Gap} from '../../components';
 
 import TabNavigator from './TabNavigator';
 import TopTab from '../../components/molecules/TopTab';
 
 const Explore = ({navigation}) => {
   return (
-    <ScrollView style={styles.page}>
+    <View style={styles.page}>
       <TopTab title="Eksplorasi" onBack={() => navigation.goBack()} />
       <View style={styles.container}>
         <View style={styles.carouselContainer}>
@@ -29,9 +29,9 @@ const Explore = ({navigation}) => {
         </View>
         <Text style={styles.title}>Eksplorasi yuk!</Text>
         <TabNavigator navigation={navigation} />
-        <Text>hehehe</Text>
+        <Gap color={colors.white} width={'100%'} height={30} />
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
@@ -40,7 +40,7 @@ export default Explore;
 const styles = StyleSheet.create({
   page: {
     // flex: 1,
-    height: 10000,
+    // height: 10000,
     backgroundColor: colors.white,
   },
   carouselContainer: {

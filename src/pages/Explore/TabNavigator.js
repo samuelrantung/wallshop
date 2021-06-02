@@ -41,7 +41,7 @@ export default TabNavigator;
 
 const styles = StyleSheet.create({
   tabNavigatorContainer: {
-    height: '100%',
+    height: 323,
     // paddingHorizontal: 20,
   },
 });
