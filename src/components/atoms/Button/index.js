@@ -15,6 +15,8 @@ const Button = ({
   icon,
   width,
   fontSize = 18,
+  fontColor = 'white',
+  fontFamily,
 }) => {
   if (type === 'icon-only') {
     return (
@@ -26,7 +28,9 @@ const Button = ({
         <TouchableOpacity
           style={styles.button(color, radius)}
           onPress={onPress}>
-          <Text style={styles.buttonText(fontSize)}>{title}</Text>
+          <Text style={styles.buttonText(fontSize, fontColor, fontFamily)}>
+            {title}
+          </Text>
         </TouchableOpacity>
       </View>
     );
@@ -48,9 +52,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   }),
-  buttonText: fontSize => ({
-    // fontFamily: fonts.Poppins.regular,
+  buttonText: (fontSize, fontColor, fontFamily) => ({
+    fontFamily: fontFamily,
     fontSize: fontSize,
-    color: colors.white,
+    color: fontColor,
   }),
 });

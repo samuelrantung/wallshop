@@ -1,11 +1,19 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import {colors, IconPinSmall, IconStar, IMGAceHardware} from '../../assets';
 import {Gap} from '../../components';
 
-const Toko = ({shopName, shopDescription, rating, location, image}) => {
+const Toko = ({
+  shopName,
+  shopDescription,
+  rating,
+  location,
+  image,
+  onPress,
+}) => {
   return (
-    <View style={styles.shopContainer}>
+    <TouchableOpacity style={styles.shopContainer} onPress={onPress}>
       <Image source={image} style={styles.image} />
       <View style={styles.shopTextContainer}>
         <Text style={styles.shopName}>{shopName}</Text>
@@ -25,7 +33,7 @@ const Toko = ({shopName, shopDescription, rating, location, image}) => {
         </View>
         <Gap height={10} />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

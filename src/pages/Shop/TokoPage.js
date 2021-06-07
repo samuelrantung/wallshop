@@ -1,5 +1,12 @@
 import React from 'react';
-import {FlatList, StyleSheet, Text, TextInput, View} from 'react-native';
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {
   colors,
   fonts,
@@ -73,7 +80,7 @@ const DATA = [
   },
 ];
 
-const TokoPage = () => {
+const TokoPage = ({onPress, navigation}) => {
   const renderItem = ({item}) => (
     <Toko
       shopName={item.name}
@@ -81,6 +88,7 @@ const TokoPage = () => {
       rating={item.rating}
       location={item.location}
       image={item.image}
+      onPress={() => navigation.navigate('ShopDetail')}
     />
   );
   return (

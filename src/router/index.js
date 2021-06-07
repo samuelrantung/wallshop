@@ -20,6 +20,8 @@ import {
   IconHome,
   IconNotification,
 } from '../assets';
+import ShopDetail from '../pages/Shop/ShopDetail';
+// import {Shop} from '../pages/Shop/Shop';
 
 const Tab = createBottomTabNavigator();
 
@@ -133,6 +135,11 @@ const Router = () => {
       <Stack.Screen
         name="Notification"
         component={Notification}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ShopDetail"
+        component={ShopDetail}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

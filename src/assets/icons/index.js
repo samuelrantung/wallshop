@@ -39,8 +39,10 @@ import IconBox from './ic-box.svg';
 import IconCar from './ic-car.svg';
 import IconCompleted from './ic-completed';
 import IconLoveSmall from './ic-love-small.svg';
+import IconStarBig from './ic-star-big.svg';
 
 export {
+  IconStarBig,
   IconLoveSmall,
   IconClock,
   IconBox,

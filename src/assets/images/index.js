@@ -30,8 +30,20 @@ import IMGKesehatan from './img-kesehatan.png';
 import IMGFurniture from './img-furniture.png';
 import IMGMainan from './img-mainan.png';
 import IMGPeliharaan from './img-peliharaan.png';
+import IMGStephenHawking from './img-stephen-hawking-books.png';
+import IMGTheLeanStartup from './img-the-lean-startup.png';
+import IMGElonMusk from './img-elon-musk.png';
+import IMGManusiaDigital from './img-manusia-digital.png';
+import IMGGramediaShop from './img-gramedia-shop.png';
+import IMGRatingDummy from './img-rating-dummy.png';
 
 export {
+  IMGRatingDummy,
+  IMGGramediaShop,
+  IMGStephenHawking,
+  IMGTheLeanStartup,
+  IMGElonMusk,
+  IMGManusiaDigital,
   IMGMakanan,
   IMGGadget,
   IMGOtomotif,
