@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 13,
-    marginBottom: 30,
+    marginBottom: 10,
   },
   shopName: {
     fontSize: 20,

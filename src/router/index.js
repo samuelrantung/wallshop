@@ -21,7 +21,6 @@ import {
   IconNotification,
 } from '../assets';
 import ShopDetail from '../pages/Shop/ShopDetail';
-// import {Shop} from '../pages/Shop/Shop';
 
 const Tab = createBottomTabNavigator();
 

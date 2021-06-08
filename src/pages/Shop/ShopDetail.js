@@ -4,7 +4,6 @@ import {ScrollView} from 'react-native-gesture-handler';
 import {
   colors,
   fonts,
-  IconStar,
   IconStarBig,
   IMGElonMusk,
   IMGGramedia,
