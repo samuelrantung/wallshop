@@ -36,8 +36,20 @@ import IMGElonMusk from './img-elon-musk.png';
 import IMGManusiaDigital from './img-manusia-digital.png';
 import IMGGramediaShop from './img-gramedia-shop.png';
 import IMGRatingDummy from './img-rating-dummy.png';
+import IMGSeodalmi from './img-seodalmi.png';
+import IMGNamdosan from './img-namdosan.png';
+import IMGHanjipyeong from './img-hanjipyeong.png';
+import IMGProfileDummy from './img-profiledummy.png';
+import IMGGramediaFeed from './img-gramedia-feed.png';
+import IMGGramediaFollowing from './img-gramedia-following.png';
 
 export {
+  IMGGramediaFeed,
+  IMGGramediaFollowing,
+  IMGProfileDummy,
+  IMGSeodalmi,
+  IMGHanjipyeong,
+  IMGNamdosan,
   IMGRatingDummy,
   IMGGramediaShop,
   IMGStephenHawking,

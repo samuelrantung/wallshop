@@ -40,8 +40,10 @@ import IconCar from './ic-car.svg';
 import IconCompleted from './ic-completed';
 import IconLoveSmall from './ic-love-small.svg';
 import IconStarBig from './ic-star-big.svg';
+import IconThreeDots from './ic-three-dots.svg';
 
 export {
+  IconThreeDots,
   IconStarBig,
   IconLoveSmall,
   IconClock,

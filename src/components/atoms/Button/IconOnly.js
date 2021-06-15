@@ -26,6 +26,7 @@ import {
   IconArrowBack,
   IconShoppingCart,
   IconLoveSmall,
+  IconThreeDots,
 } from '../../../assets';
 import {colors} from '../../../assets';
 
@@ -196,6 +197,13 @@ const IconOnly = ({icon, onPress, width, height, color = colors.white}) => {
       return (
         <View style={styles.iconContainer(width, height)}>
           <IconLoveSmall />
+        </View>
+      );
+    }
+    if (icon === 'icon-three-dots') {
+      return (
+        <View style={styles.iconContainer(width, height)}>
+          <IconThreeDots />
         </View>
       );
     }

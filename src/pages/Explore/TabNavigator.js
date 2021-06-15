@@ -12,7 +12,11 @@ const TabNavigator = ({navigation}) => {
     <View style={styles.tabNavigatorContainer}>
       <Tab.Navigator
         tabBarOptions={{
-          labelStyle: {fontSize: 15, fontFamily: fonts.Roboto.medium},
+          labelStyle: {
+            fontSize: 15,
+            fontFamily: fonts.Roboto.medium,
+            textTransform: 'capitalize',
+          },
           style: {
             backgroundColor: colors.lightGrey,
             borderRadius: 10,

@@ -32,7 +32,11 @@ const Shop = ({navigation}) => {
         <Gap height={19} />
         <Tab.Navigator
           tabBarOptions={{
-            labelStyle: {fontSize: 15, fontFamily: fonts.Roboto.medium},
+            labelStyle: {
+              fontSize: 15,
+              fontFamily: fonts.Roboto.medium,
+              textTransform: 'capitalize',
+            },
             style: {
               backgroundColor: colors.lightGrey,
               borderRadius: 10,

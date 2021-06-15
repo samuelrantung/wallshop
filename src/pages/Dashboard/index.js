@@ -96,7 +96,9 @@ const Dashboard = ({navigation}) => {
         <Gap height={5} />
         <View style={styles.shoppingCategoryContainer}>
           <Text style={styles.shoppingCategoryTitle}>KATEGORI BELANJA</Text>
-          <TouchableOpacity style={styles.shoppingCategoryButton}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Leaderboard')}
+            style={styles.shoppingCategoryButton}>
             <Image source={IMGLeaderboard} />
             <Text style={styles.shoppingCategoryButtonText}>Leaderboard</Text>
           </TouchableOpacity>

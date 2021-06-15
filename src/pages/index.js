@@ -6,8 +6,10 @@ import Following from './Following';
 import Notification from './Notification';
 import Product from './Product';
 import Shop from './Shop';
+import Leaderboard from './Leaderboard';
 
 export {
+  Leaderboard,
   Login,
   Dashboard,
   Account,
