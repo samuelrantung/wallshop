@@ -1,4 +1,6 @@
+import axios from 'axios';
 import React from 'react';
+import {useState} from 'react';
 import {StyleSheet, View, Text, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {colors, IconPinSmall, IconStar, IMGAceHardware} from '../../assets';
@@ -12,9 +14,17 @@ const Toko = ({
   image,
   onPress,
 }) => {
+  console.log('uri', image);
   return (
     <TouchableOpacity style={styles.shopContainer} onPress={onPress}>
-      <Image source={image} style={styles.image} />
+      <Image
+        source={{
+          uri: image,
+        }}
+        style={styles.image}
+        width={50}
+        height={50}
+      />
       <View style={styles.shopTextContainer}>
         <Text style={styles.shopName}>{shopName}</Text>
         <Text style={styles.shopDescription}>{shopDescription}</Text>
@@ -44,6 +54,9 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     marginRight: 16,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // backgroundColor: 'yellow',
   },
   shopContainer: {
     height: 80,

@@ -1,6 +1,9 @@
-import React from 'react';
+import axios from 'axios';
+import React, {useState} from 'react';
+import {useEffect} from 'react';
 import {
   FlatList,
+  PermissionsAndroid,
   StyleSheet,
   Text,
   TextInput,
@@ -20,71 +23,115 @@ import {
 } from '../../assets';
 import {Button, Gap, SearchBar} from '../../components';
 import Toko from './Toko';
+import GetLocation from 'react-native-get-location';
 
-const DATA = [
-  {
-    id: 1,
-    name: 'Ace Hardware Mantos',
-    description: 'Toko perlengkapan rumah',
-    rating: '4.9',
-    location: 'Mantos, Kota Manado',
-    image: require('../../assets/images/img-ace-hardware.png'),
-  },
-  {
-    id: 2,
-    name: 'Gramedia',
-    description: 'Buku dan perlengkapan belajar',
-    rating: '5.0',
-    location: 'Mantos, Kota Manado',
-    image: require('../../assets/images/img-gramedia.png'),
-  },
-  {
-    id: 3,
-    name: '3Second',
-    description: 'Fashion & Clothing',
-    rating: '4.8',
-    location: 'Mantos, Kota Manado',
-    image: require('../../assets/images/img-3second.png'),
-  },
-  {
-    id: 4,
-    name: 'Sport Station',
-    description: 'Fashion & Sport',
-    rating: '4.9',
-    location: 'MTC, Kota Manado',
-    image: require('../../assets/images/img-sport-station.png'),
-  },
-  {
-    id: 5,
-    name: 'Miens Souvenir Tikala',
-    description: 'Toko oleh - oleh souvenir',
-    rating: '4.7',
-    location: 'Tikala, Kota Manado',
-    image: require('../../assets/images/img-miens-souvenir-tikala.png'),
-  },
-  {
-    id: 6,
-    name: 'Maskut Sport',
-    description: 'Perlengkapan olahraga basket',
-    rating: '4.8',
-    location: 'MTC, Kota Manado',
-    image: require('../../assets/images/img-maskut-sport.png'),
-  },
-  {
-    id: 7,
-    name: 'Maskut Sport',
-    description: 'Perlengkapan olahraga basket',
-    rating: '4.8',
-    location: 'MTC, Kota Manado',
-    image: require('../../assets/images/img-maskut-sport.png'),
-  },
-];
-
+// const DATA = [
+//   {
+//     id: 1,
+//     name: 'Ace Hardware Mantos',
+//     description: 'Toko perlengkapan rumah',
+//     rating: '4.9',
+//     location: 'Mantos, Kota Manado',
+//     image: require('../../assets/images/img-ace-hardware.png'),
+//   },
+//   {
+//     id: 2,
+//     name: 'Gramedia',
+//     description: 'Buku dan perlengkapan belajar',
+//     rating: '5.0',
+//     location: 'Mantos, Kota Manado',
+//     image: require('../../assets/images/img-gramedia.png'),
+//   },
+//   {
+//     id: 3,
+//     name: '3Second',
+//     description: 'Fashion & Clothing',
+//     rating: '4.8',
+//     location: 'Mantos, Kota Manado',
+//     image: require('../../assets/images/img-3second.png'),
+//   },
+//   {
+//     id: 4,
+//     name: 'Sport Station',
+//     description: 'Fashion & Sport',
+//     rating: '4.9',
+//     location: 'MTC, Kota Manado',
+//     image: require('../../assets/images/img-sport-station.png'),
+//   },
+//   {
+//     id: 5,
+//     name: 'Miens Souvenir Tikala',
+//     description: 'Toko oleh - oleh souvenir',
+//     rating: '4.7',
+//     location: 'Tikala, Kota Manado',
+//     image: require('../../assets/images/img-miens-souvenir-tikala.png'),
+//   },
+//   {
+//     id: 6,
+//     name: 'Maskut Sport',
+//     description: 'Perlengkapan olahraga basket',
+//     rating: '4.8',
+//     location: 'MTC, Kota Manado',
+//     image: require('../../assets/images/img-maskut-sport.png'),
+//   },
+//   {
+//     id: 7,
+//     name: 'Maskut Sport',
+//     description: 'Perlengkapan olahraga basket',
+//     rating: '4.8',
+//     location: 'MTC, Kota Manado',
+//     image: require('../../assets/images/img-maskut-sport.png'),
+//   },
+// ];
 const TokoPage = ({onPress, navigation}) => {
+  const [DATA, setDATA] = useState();
+  useEffect(() => {
+    axios.get('https://wallshop.herokuapp.com/shop').then(res => {
+      // console.log('Res : ', res.data);
+      setDATA(res.data.data);
+    });
+  }, []);
+  // console.log('DATA : ', DATA);
+  const requestLocationPermission = async () => {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+        {
+          title: 'Cool Photo App Camera Permission',
+          message:
+            'Cool Photo App needs access to your camera ' +
+            'so you can take awesome pictures.',
+          buttonNeutral: 'Ask Me Later',
+          buttonNegative: 'Cancel',
+          buttonPositive: 'OK',
+        },
+      );
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        console.log('You can use the camera');
+      } else {
+        console.log('Camera permission denied');
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  };
+
+  GetLocation.getCurrentPosition({
+    enableHighAccuracy: true,
+    timeout: 15000,
+  })
+    .then(location => {
+      console.log(location);
+    })
+    .catch(error => {
+      const {code, message} = error;
+      console.warn(code, message);
+    });
+
   const renderItem = ({item}) => (
     <Toko
       shopName={item.name}
-      shopDescription={item.description}
+      shopDescription={item.details}
       rating={item.rating}
       location={item.location}
       image={item.image}
@@ -101,6 +148,33 @@ const TokoPage = ({onPress, navigation}) => {
     </View>
   );
 };
+
+// class TokoPage extends React.Component{
+//   state: {
+//     DATA:
+//   }
+//   const renderItem = ({item}) => (
+//     <Toko
+//       shopName={item.name}
+//       shopDescription={item.description}
+//       rating={item.rating}
+//       location={item.location}
+//       image={item.image}
+//       // onPress={() => navigation.navigate('ShopDetail')}
+//     />
+//   );
+//   render(){
+//     return(
+//       <View style={styles.page}>
+//       <FlatList
+//         data={DATA}
+//         renderItem={renderItem}
+//         keyExtractor={item => item.id}
+//       />
+//     </View>
+//     )
+//   }
+// }
 
 export default TokoPage;
 

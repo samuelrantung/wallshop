@@ -25,6 +25,7 @@ const Explore = ({navigation}) => {
             image1={IMGExplore1}
             image2={IMGExplore2}
             image3={IMGExplore2}
+            type="explore"
           />
         </View>
         <Text style={styles.title}>Eksplorasi yuk!</Text>

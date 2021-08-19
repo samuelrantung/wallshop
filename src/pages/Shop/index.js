@@ -1,10 +1,18 @@
 import React from 'react';
-import {StyleSheet, Text, TextInput, View} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {colors, fonts, IconSearch} from '../../assets';
 import {Button, Gap, SearchBar} from '../../components';
 import TokoPage from './TokoPage';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import TopTab from '../../components/molecules/TopTab';
+import axios from 'axios';
+import {useState} from 'react/cjs/react.production.min';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -18,7 +26,11 @@ const Mall = () => {
 const Shop = ({navigation}) => {
   return (
     <View style={styles.page}>
-      <TopTab title="Toko" onBack={() => navigation.goBack()} />
+      <TopTab
+        title="Toko"
+        onBack={() => navigation.goBack()}
+        onPress={() => Test}
+      />
       <View style={styles.container}>
         <Text style={styles.questionText}>Mau cari apa hari ini?</Text>
         <Gap height={24} />

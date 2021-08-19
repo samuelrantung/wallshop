@@ -16,7 +16,15 @@ const SearchBar = ({type, width = 300}) => {
           />
           <IconWorld />
         </View>
-        <Button type="icon-only" icon="icon-cart" />
+        <Button
+          type="icon-only"
+          icon="icon-cart"
+          onPress={() => {
+            fetch('https://wallshop.herokuapp.com/shop/', {
+              method: 'GET',
+            }).then(res => console.log('response api : ', res));
+          }}
+        />
       </View>
     );
   } else {

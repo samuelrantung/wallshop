@@ -3,7 +3,7 @@ import {View, StyleSheet, Text} from 'react-native';
 import Button from '../../atoms/Button';
 import {fonts} from '../../../assets';
 
-const TopTab = ({title, onBack, type}) => {
+const TopTab = ({title, onBack, type, onPress}) => {
   if (type === 'no-cart') {
     return (
       <View style={styles.topTab}>
@@ -20,7 +20,7 @@ const TopTab = ({title, onBack, type}) => {
           <Button type="icon-only" icon="icon-arrow-back" onPress={onBack} />
           <Text style={styles.title}>{title}</Text>
         </View>
-        <Button type="icon-only" icon="icon-shopping-cart" />
+        <Button type="icon-only" icon="icon-shopping-cart" onPress={onPress} />
       </View>
     );
   }

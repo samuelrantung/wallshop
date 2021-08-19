@@ -1,4 +1,5 @@
 import React from 'react';
+import {useEffect} from 'react';
 import {
   StyleSheet,
   View,
@@ -7,6 +8,7 @@ import {
   ScrollView,
   StatusBar,
   Image,
+  PermissionsAndroid,
 } from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {
@@ -54,6 +56,29 @@ const OpenAllButton = () => {
   );
 };
 
+const requestLocationPermission = async () => {
+  try {
+    const granted = await PermissionsAndroid.request(
+      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+      {
+        title: 'Cool Photo App Camera Permission',
+        message:
+          'Cool Photo App needs access to your camera ' +
+          'so you can take awesome pictures.',
+        buttonNeutral: 'Ask Me Later',
+        buttonNegative: 'Cancel',
+        buttonPositive: 'OK',
+      },
+    );
+    if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+      console.log('You can use the location');
+    } else {
+      console.log('Location permission denied');
+    }
+  } catch (err) {
+    console.warn(err);
+  }
+};
 const Dashboard = ({navigation}) => {
   return (
     <View style={styles.page}>
@@ -72,6 +97,7 @@ const Dashboard = ({navigation}) => {
               image1={IMGDashboard}
               image2={IMGDashboard}
               image3={IMGDashboard}
+              type="dashboard"
             />
           </View>
         </View>
@@ -184,7 +210,7 @@ const Dashboard = ({navigation}) => {
             />
           </View>
         </View>
-        <Gap height={25} />
+        <Gap height={10} />
         <View style={styles.popularShopWrapper}>
           <Text style={styles.shoppingCategoryTitle}>TOKO TERPOPULER</Text>
           <Gap height={20} />
