@@ -37,7 +37,7 @@ const Carousel = ({image1, image2, image3, type}) => {
         backgroundColor: colors.green,
         opacity: 0.5,
       }}
-      paginationStyle={{bottom: 0}}
+      paginationStyle={{bottom: -15}}
       activeDotStyle={{backgroundColor: colors.green}}>
       {/* <View style={styles.slideVideo}>
         <View style={styles.videoStyling}>
